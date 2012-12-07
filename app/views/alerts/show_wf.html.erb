@@ -1,0 +1,17 @@
+<% provide(:title, 'Web Filters Alerts') %>
+<h1>Web Filters Alerts</h1>
+
+<div align="right"><%=link_to "Edit trigger priorities", triggers_path %></div>
+
+<p></p>
+
+<% $j = 0 %>
+
+<% @companies_array.each do |wf| %>
+	
+	<% if wf['class'] == 1 %>
+		<div class="alert alert-error"><%= @alerts_array[$j]['subject'] %></div>
+	<% end %>
+	<% $j = $j + 1 %>
+<% end %>
+

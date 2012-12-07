@@ -1,0 +1,15 @@
+<% provide(:title, 'Spam Alerts') %>
+<h1>Spam Alerts</h1>
+
+<div align="right"><%=link_to "Edit trigger priorities", triggers_path %></div>
+
+<p></p>
+
+<% $i = 0 %>
+
+<% @companies_array.each do |spam| %>
+	<% if spam['class'] == 0 %>
+		<div class="alert alert-error"><%= @alerts_array[$i]['subject'] %></div>
+	<% end %>
+	<% $i = $i + 1 %>
+<% end %>

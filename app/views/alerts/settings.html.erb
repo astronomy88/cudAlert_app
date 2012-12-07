@@ -1,0 +1,66 @@
+<% provide(:title, 'Trigger Settings') %>
+<h1>Trigger Settings</h1>
+
+
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Product</th>
+			<th>Trigger</th>
+			<th>Priority</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @triggers_spam.each do |spam| %>
+			<tr>
+				<td><%= spam.product %></td>
+				<td><%= spam.trigger %></td>
+				<td><%=select_tag "priority", options_for_select([[spam.priority ,0], 
+				[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Product</th>
+			<th>Trigger</th>
+			<th>Priority</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @triggers_wf.each do |wf| %>
+			<tr>
+				<td><%= wf.product %></td>
+				<td><%= wf.trigger %></td>
+				<td> <%= select_tag "priority", options_for_select([[wf.priority ,1], 
+				[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+<!-- <table class="table table-bordered">
+	<thead>
+		<tr>
+			<th>Product</th>
+			<th>Trigger</th>
+			<th>Priority</th>
+			<th>Edit Priority</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @triggers_wf.each do |wf| %>
+			<tr>
+				<td><%= wf.product %></td>
+				<td><%= wf.trigger %></td>
+				<td> <%= wf.priority %></td>
+				<td> <%= select_tag "priority", options_for_select([[wf.priority ,1], 
+				[1, 1], [2, 2], [3, 3], [4, 4], [5, 5]]) %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table> -->
